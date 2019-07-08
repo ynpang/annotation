@@ -1,5 +1,6 @@
 package com.enjoy.service;
 
+import com.enjoy.annotation.NeedSetFieldValue;
 import com.enjoy.dao.OrderDao;
 import com.enjoy.model.Order;
 import com.github.pagehelper.Page;
@@ -13,6 +14,7 @@ public class OrderService {
 	@Autowired
 	private OrderDao orderDao;
 
+	@NeedSetFieldValue
 	public Page<Order> pageQuery(String customerId, int pageNum, int pageSize) {
 		Page<Order> page = PageHelper.startPage(pageNum, pageSize);
 		this.orderDao.query(customerId);

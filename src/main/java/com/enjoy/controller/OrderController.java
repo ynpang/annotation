@@ -17,7 +17,6 @@ public class OrderController {
 	private BeanUtil beanUtil;
 
 	@RequestMapping("query")
-	@NeedSetFieldValue
 	public Object query(String customerId, int pageNum, int pageSize) {
 		return this.orderService.pageQuery(customerId, pageNum, pageSize);
 
